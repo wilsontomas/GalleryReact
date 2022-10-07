@@ -7,5 +7,8 @@ export const homeStyles = StyleSheet.create({
       flexDirection:'column',
       backgroundColor: '#fff',
     },
+    items:{
+        flexGrow:1,
+    }
    
   });

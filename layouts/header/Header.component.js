@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 export function Header() {
   return (
     <View style={headerStyle.container}>
-      <Text>Header</Text>
+      <Text style={headerStyle.logo}>Header</Text>
       
     </View>
   );
