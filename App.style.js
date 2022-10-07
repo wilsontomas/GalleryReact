@@ -10,18 +10,16 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     header:{
-      flex:1,
-      backgroundColor:'blue',
+      flexGrow:1,
       width:'100%'
     },
     body:{
-      flex:8,
+      flexGrow:8,
       backgroundColor:'white',
       width:'100%'
     },
     footer:{
-      flex:1,
-      backgroundColor:'red',
+      flexGrow:1,
       width:'100%'
     }
   });
