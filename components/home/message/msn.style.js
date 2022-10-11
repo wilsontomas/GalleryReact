@@ -18,15 +18,16 @@ export const msnStyles = StyleSheet.create({
     imageContainer:{
     flexGrow:1,
       
+     alignItems:'center'
     },
     imageS:{
-      height:50,
-      width:50
+      height:150,
+      width:200
     },
     info:{
-      flexGrow:1,
-      flexBasis:'15%',
-      paddingRight:1
+      flexGrow:5,
+      flexBasis:'10%',
+      
       
     },
     content:{

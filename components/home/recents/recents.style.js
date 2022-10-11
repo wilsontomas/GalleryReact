@@ -23,9 +23,10 @@ export const recentStyles = StyleSheet.create({
       
       height:75,
       width:90,
-      backgroundColor:'#0d99ff',
+      
       borderRadius:20,
-       margin:5
+       margin:5,
+       alignItems:'center'
       
          
     },
@@ -35,7 +36,18 @@ export const recentStyles = StyleSheet.create({
     },
     images:{
       width:75,
-      height:90
+      height:75,
+      opacity: 0.5,
+      
+      
+    },
+    texto:{
+      color:'white',
+     zIndex:99,
+     position:'absolute',
+     fontSize:10,
+    marginVertical:'60%'
+
     }
    
   });

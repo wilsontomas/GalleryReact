@@ -24,10 +24,10 @@ export function Msn() {
         <View style={msnStyles.itemContainer}>
         <View style={msnStyles.imageContainer}>
               <Image 
-              source={require('../../../assets/inicio/Welcome.svg')}
-               style={msnStyles.imageS}>
+              source={require('../../../assets/inicio/Welcome.jpg')}
+               style={msnStyles.imageS}/>
 
-              </Image>
+            
             </View>
             <View style={msnStyles.info}>
               <Text style={[msnStyles.content,{ fontFamily: 'LexendGiga-Black' }]}>
