@@ -6,7 +6,7 @@ export const placeStyles = StyleSheet.create({
     },
     itemScroll:{
     
-       backgroundColor:'yellow',
+      
       
     },
     itemContainer:{
@@ -20,7 +20,7 @@ export const placeStyles = StyleSheet.create({
     
       height:90,
       width:115,
-      backgroundColor:'white',
+      backgroundColor:'#0d99ff',
       borderRadius:20,
        margin:5
       

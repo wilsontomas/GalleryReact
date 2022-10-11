@@ -3,7 +3,7 @@ import { StyleSheet} from 'react-native';
 export const headerStyle = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'blue',
+      
       alignItems: 'flex-end',
       justifyContent:'flex-end',
       paddingEnd:20,
@@ -12,7 +12,7 @@ export const headerStyle = StyleSheet.create({
       
     },
     logo:{
-      color:'white',
+      color:'blue',
       fontSize:20
     }
   });

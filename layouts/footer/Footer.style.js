@@ -4,7 +4,7 @@ export const footerStyle = StyleSheet.create({
     container: {
       flex:1,
       flexDirection:'row',
-      backgroundColor: 'red',
+    
       alignItems: 'center',
       
     },
@@ -12,8 +12,9 @@ export const footerStyle = StyleSheet.create({
       flexGrow:1,
       height:75,
       width:30,
-      backgroundColor:'white',
+      backgroundColor:'#0d99ff',
       borderRadius:50,
+     
       justifyContent:'center',
       alignItems:'center'
          

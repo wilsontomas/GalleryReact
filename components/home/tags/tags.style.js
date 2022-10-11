@@ -7,7 +7,7 @@ export const tagStyles = StyleSheet.create({
     },
     itemScroll:{
     
-       backgroundColor:'yellow',
+      
       
     },
     itemContainer:{
@@ -21,7 +21,7 @@ export const tagStyles = StyleSheet.create({
     
       height:60,
       width:70,
-      backgroundColor:'white',
+      backgroundColor:'#0d99ff',
       borderRadius:20,
        margin:5
       

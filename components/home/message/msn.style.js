@@ -15,9 +15,13 @@ export const msnStyles = StyleSheet.create({
       paddingTop:20,
       paddingLeft:10
     },
-    image:{
-   flexGrow:1,
-  
+    imageContainer:{
+    flexGrow:1,
+      
+    },
+    imageS:{
+      height:50,
+      width:50
     },
     info:{
       flexGrow:1,
@@ -27,7 +31,7 @@ export const msnStyles = StyleSheet.create({
     },
     content:{
     
-      fontSize:11
+      fontSize:12
     }
    
   });

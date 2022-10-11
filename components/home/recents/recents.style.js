@@ -8,7 +8,7 @@ export const recentStyles = StyleSheet.create({
       
     },
     itemScroll:{ 
-       backgroundColor:'yellow',
+     
       
     },
     itemContainer:{
@@ -23,7 +23,7 @@ export const recentStyles = StyleSheet.create({
       
       height:75,
       width:90,
-      backgroundColor:'white',
+      backgroundColor:'#0d99ff',
       borderRadius:20,
        margin:5
       

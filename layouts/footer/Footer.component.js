@@ -6,7 +6,9 @@ export function Footer() {
   return (
     <View style={footerStyle.container}>
 
-      {opciones.map((op)=><View key={op.index} style={footerStyle.options}><Text>Hello</Text></View>)}
+      {opciones.map((op)=><View key={op.index} style={footerStyle.options}>
+      
+        </View>)}
     
       
     </View>
