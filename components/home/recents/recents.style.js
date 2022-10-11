@@ -14,12 +14,13 @@ export const recentStyles = StyleSheet.create({
     itemContainer:{
      
      flexDirection:'row',
-     alignItems:'center'
+     alignItems:'center',
+     
       
     },
     items:{
       
-    
+      
       height:75,
       width:90,
       backgroundColor:'white',
@@ -31,6 +32,10 @@ export const recentStyles = StyleSheet.create({
     title:{
       paddingTop:40,
       paddingLeft:15
+    },
+    images:{
+      width:75,
+      height:90
     }
    
   });

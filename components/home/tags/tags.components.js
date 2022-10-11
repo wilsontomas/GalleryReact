@@ -1,6 +1,6 @@
 import { tagStyles } from './tags.style'; 
 import { Text, View, ScrollView } from 'react-native';
-import { testData } from '../../data/default.data';
+import { testData } from '../../../data/default.data';
 export function Tags() {
   return (
     <View style={tagStyles.container}>

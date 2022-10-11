@@ -1,6 +1,6 @@
-import { placeStyles } from './places.style';
+import {placeStyles } from './places.style'
 import { Text, View,ScrollView } from 'react-native';
-import { testData } from '../../data/default.data';
+import { testData } from '../../../data/default.data';
 export function Places() {
   return (
     <View style={placeStyles.container}>

@@ -6,7 +6,7 @@ import { styles } from './App.style';
 import { Home } from './components/home/home.components';
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container]}>
       <View style={styles.header}>
       <Header></Header>
       </View>
