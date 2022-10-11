@@ -1,5 +1,5 @@
 import { tagStyles } from './tags.style'; 
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView,Image } from 'react-native';
 import { testData } from '../../../data/default.data';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
@@ -23,9 +23,39 @@ export function Tags() {
       <Text  style={[tagStyles.title,{ fontFamily: 'LexendGiga-Black' }]}>Tags</Text>
       <ScrollView horizontal={true} style={tagStyles.itemScroll}>
         <View style={tagStyles.itemContainer}>
-        {testData.map((x)=><View key={x.index} style={tagStyles.items}>
+      
+        <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
         
-          </View>)}
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Tagfaces.jpg')} />
+         
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Food.jpg')} />
+         
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Pets.jpg')} />
+          
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
+        
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Food.jpg')} />
+         
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Pets.jpg')} />
+          
+          </View>
+          <View  style={tagStyles.items}>
+        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
+        
+          </View>
         </View>
       
       </ScrollView>
