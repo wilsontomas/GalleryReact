@@ -3,23 +3,36 @@ import { StyleSheet } from "react-native";
 
 export const albumGroupStyles = StyleSheet.create({
     container: {
-      flexGrow:1,
-      
+    flexGrow:1,
+     flexDirection:'row',
+     
+      flexWrap:'wrap'
       
     },
     
     itemContainer:{
-     flex:1
+    
+   
     
     },
-    itemScroll:{
-      flexGrow:7
+    Scroll:{
+      backgroundColor:'lightblue',
+    },
+    scrollContainer:{
+     
+      flexGrow:1,
+      width:'100%'
+    },
+    textContainer:{
+      flexGrow:1,
+      backgroundColor:'yellow',
+      width:'100%'
     },
   
     items:{
       
       
-       margin:5,
+     padding:4
       
       
          

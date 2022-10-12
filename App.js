@@ -13,6 +13,7 @@ export default function App() {
       </View>
       <View style={styles.body}>
      <Album></Album>
+    
       </View>
     
       <View style={styles.footer}>

@@ -6,8 +6,9 @@ export const styles = StyleSheet.create({
       flex: 1,
       flexDirection:'column',
       backgroundColor: '#fff',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'center',
+
     },
     header:{
       flexGrow:1,

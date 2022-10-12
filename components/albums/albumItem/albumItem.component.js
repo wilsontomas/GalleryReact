@@ -18,7 +18,30 @@ export function AlbumItem() {
     }
     return (
         <View style={albumItemStyles.container} onLayout={onLayoutRootView}>
+
             <View style={[albumItemStyles.titleContainer]}>
+                <View style={albumItemStyles.cuadro}>
+                    <View style={albumItemStyles.cuadrop}>
+                    </View>
+                </View>
+                <View style={albumItemStyles.textContainer}>
+                    <Text style={[albumItemStyles.subTittle, { fontFamily: 'LexendGiga-Black' }]}>Lorem Ipsum  </Text>
+                    <Text style={[albumItemStyles.subTittle2, { fontFamily: 'LexendGiga-Black' }]}>Lorem Ipsum ihhhhhhhhhhhhhhhhhhhhhhhhhsjjjjjjjj simply dummy. </Text>
+                </View>
+            </View>
+            <View style={[albumItemStyles.pictureContainer]}>
+                
+                <View style={albumItemStyles.pictureSubContainer1}>
+                    <Text>Hi</Text>
+                </View>
+                <View style={albumItemStyles.pictureSubContainer2}>
+                    <Text>Ho</Text>
+                </View>
+            </View>
+        </View>
+    );
+    /*
+     <View style={[albumItemStyles.titleContainer]}>
                 <View style={albumItemStyles.cuadro}>
 
                 </View>
@@ -35,6 +58,5 @@ export function AlbumItem() {
                     <Text>Primero</Text>
                 </View>
             </View>
-        </View>
-    );
+    */
 }
