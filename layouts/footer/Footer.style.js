@@ -10,16 +10,19 @@ export const footerStyle = StyleSheet.create({
     },
     options:{
       flexGrow:1,
-      height:75,
+      height:80,
       width:30,
-      backgroundColor:'#0d99ff',
-      borderRadius:50,
+     
      
       justifyContent:'center',
       alignItems:'center'
          
     },
-    icon:{
-
-    }
+    images:{
+      width:50,
+      height:50,
+      borderRadius:20,
+      marginTop:5
+      
+    },
   });
