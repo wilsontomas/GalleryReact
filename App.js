@@ -5,14 +5,16 @@ import { Footer } from './layouts/footer/Footer.component';
 import { styles } from './App.style';
 import { Home } from './components/home/home.components';
 import { Album } from './components/albums/album.component';
+import { ImageView } from './components/imageView/imageView.component';
 export default function App() {
+  
   return (
     <View style={[styles.container]}>
       <View style={styles.header}>
       <Header></Header>
       </View>
       <View style={styles.body}>
-     <Album></Album>
+    <ImageView></ImageView>
     
       </View>
     
