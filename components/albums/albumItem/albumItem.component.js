@@ -32,10 +32,23 @@ export function AlbumItem() {
             <View style={[albumItemStyles.pictureContainer]}>
                 
                 <View style={albumItemStyles.pictureSubContainer1}>
-                    <Text>Hi</Text>
+                <View style={albumItemStyles.bigImg}>
+                   
+                </View>
                 </View>
                 <View style={albumItemStyles.pictureSubContainer2}>
-                    <Text>Ho</Text>
+                <View style={[albumItemStyles.smallImg,{backgroundColor:'yellow'}]}>
+                   
+                   </View>
+                   <View style={[albumItemStyles.smallImg,{backgroundColor:'yellow'}]}>
+                   
+                   </View>
+                   <View style={[albumItemStyles.smallImg,{backgroundColor:'green'}]}>
+                   
+                   </View>
+                   <View style={[albumItemStyles.smallImg,{backgroundColor:'gray'}]}>
+                   
+                   </View>
                 </View>
             </View>
         </View>

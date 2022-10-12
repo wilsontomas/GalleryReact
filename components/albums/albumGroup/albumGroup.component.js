@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import { AlbumItem } from '../albumItem/albumItem.component';
 export function AlbumGroup() {
-
+  const cantidad=[1,2,3,4];
 
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
@@ -27,9 +27,9 @@ export function AlbumGroup() {
       </View>
 
       <View style={albumGroupStyles.scrollContainer}>
-       <ScrollView horizontal={true} style={albumGroupStyles.Scroll}>
+       <ScrollView style={albumGroupStyles.Scroll}>
+       {cantidad.map((x)=> <AlbumItem key={x} style={albumGroupStyles.item}></AlbumItem>)}
        
-        <AlbumItem ></AlbumItem>
        </ScrollView>
       </View>
 

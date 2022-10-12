@@ -24,7 +24,7 @@ export const albumItemStyles = StyleSheet.create({
    
     flexDirection:'row',
     height:100,
-    backgroundColor: 'red'
+   
 
   },
 
@@ -60,19 +60,39 @@ export const albumItemStyles = StyleSheet.create({
   pictureContainer: {
     flex:1,
     flexDirection: 'row',
-   backgroundColor:'yellow',
+ 
   
 
   },
   pictureSubContainer1: {
     flexGrow: 1,
-    backgroundColor: 'blue',
-    height: 200
+   
+    height: 200,
+    justifyContent:'center'
   },
   pictureSubContainer2: {
     flexGrow: 1,
-    backgroundColor: 'red',
-    height: 200
+   
+    height: 200,
+    flexDirection:'row',
+    flexWrap:'wrap',
+    width:30
+
+  },
+  bigImg:{
+   
+    height: 170,
+    borderRadius:20,
+    backgroundColor:'gray',
+    margin:5
+    
+  },
+  smallImg:{
+    flexGrow: 1,
+    height: 90,
+    margin:5,
+    width:60,
+    borderRadius:20
   }
 
 });

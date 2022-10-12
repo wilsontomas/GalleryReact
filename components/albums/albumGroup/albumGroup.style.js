@@ -16,7 +16,8 @@ export const albumGroupStyles = StyleSheet.create({
     
     },
     Scroll:{
-      backgroundColor:'lightblue',
+      backgroundColor:'#f9f9f9',
+      height:'95%'
     },
     scrollContainer:{
      
@@ -32,7 +33,7 @@ export const albumGroupStyles = StyleSheet.create({
     items:{
       
       
-     padding:4
+     marginTop:10
       
       
          
