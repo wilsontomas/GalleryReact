@@ -32,22 +32,27 @@ export function AlbumItem() {
             <View style={[albumItemStyles.pictureContainer]}>
                 
                 <View style={albumItemStyles.pictureSubContainer1}>
-                <View style={albumItemStyles.bigImg}>
-                   
+                <View style={albumItemStyles.bigImgContainer}>
+                <Image  style={albumItemStyles.bigImg} source={require('../../../assets/listaAlbumes/coverAlbum1.jpg')} />
                 </View>
+              
                 </View>
                 <View style={albumItemStyles.pictureSubContainer2}>
-                <View style={[albumItemStyles.smallImg,{backgroundColor:'yellow'}]}>
-                   
+                <View style={[albumItemStyles.smallImgContainer]}>
+                <Image  style={albumItemStyles.smallImg} source={require('../../../assets/listaAlbumes/previewPhoto1.jpg')} />
+                  
                    </View>
-                   <View style={[albumItemStyles.smallImg,{backgroundColor:'yellow'}]}>
-                   
+                   <View style={[albumItemStyles.smallImgContainer]}>
+                   <Image  style={albumItemStyles.smallImg} source={require('../../../assets/listaAlbumes/previewPhoto2.jpg')} />
+               
                    </View>
-                   <View style={[albumItemStyles.smallImg,{backgroundColor:'green'}]}>
-                   
+                   <View style={[albumItemStyles.smallImgContainer]}>
+                   <Image  style={albumItemStyles.smallImg} source={require('../../../assets/listaAlbumes/previewPhoto3.jpg')} />
+               
                    </View>
-                   <View style={[albumItemStyles.smallImg,{backgroundColor:'gray'}]}>
-                   
+                   <View style={[albumItemStyles.smallImgContainer]}>
+                   <Image  style={albumItemStyles.smallImg} source={require('../../../assets/listaAlbumes/previewPhoto4.jpg')} />
+               
                    </View>
                 </View>
             </View>

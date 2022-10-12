@@ -26,7 +26,6 @@ export const albumGroupStyles = StyleSheet.create({
     },
     textContainer:{
       flexGrow:1,
-      backgroundColor:'yellow',
       width:'100%'
     },
   

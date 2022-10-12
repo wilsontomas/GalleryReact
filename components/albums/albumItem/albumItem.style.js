@@ -11,7 +11,10 @@ export const albumItemStyles = StyleSheet.create({
     flexWrap:'wrap',
     alignItems:'flex-start',
    
-    padding:5
+    padding:5,
+    borderWidth:1,
+    borderBottomColor:'lightblue'
+    
   },
   itemContainer: {
 
@@ -41,7 +44,7 @@ export const albumItemStyles = StyleSheet.create({
 
   },
   cuadrop:{
-    backgroundColor: 'blue',
+    backgroundColor: 'lightblue',
     borderRadius:20,
     height: 80,
     width:80,
@@ -51,7 +54,8 @@ export const albumItemStyles = StyleSheet.create({
     flexGrow: 1
   },
   subTittle: {
-    fontSize: 13
+    fontSize: 13,
+    width:'60%'
   },
   subTittle2: {
     fontSize: 8,
@@ -76,23 +80,31 @@ export const albumItemStyles = StyleSheet.create({
     height: 200,
     flexDirection:'row',
     flexWrap:'wrap',
-    width:30
+    width:150
 
   },
-  bigImg:{
-   
+  bigImgContainer:{
+    flexGrow: 2,
     height: 170,
-    borderRadius:20,
-    backgroundColor:'gray',
-    margin:5
-    
+   justifyContent:'center',
+ alignItems:'center',
+   
   },
-  smallImg:{
+  bigImg:{
+    height:170,
+    width:170,
+    borderRadius:20,
+  },
+  smallImgContainer:{
     flexGrow: 1,
     height: 90,
     margin:5,
     width:60,
     borderRadius:20
+  },
+  smallImg:{
+    height:80,
+    width:80
   }
 
 });
