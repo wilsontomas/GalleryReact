@@ -9,9 +9,7 @@ export function Places() {
   });
   
   const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
+  
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {

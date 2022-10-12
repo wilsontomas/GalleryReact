@@ -4,6 +4,7 @@ import {Header} from './layouts/header/Header.component'
 import { Footer } from './layouts/footer/Footer.component';
 import { styles } from './App.style';
 import { Home } from './components/home/home.components';
+import { Album } from './components/albums/album.component';
 export default function App() {
   return (
     <View style={[styles.container]}>
@@ -11,7 +12,7 @@ export default function App() {
       <Header></Header>
       </View>
       <View style={styles.body}>
-     <Home></Home>
+     <Album></Album>
       </View>
     
       <View style={styles.footer}>

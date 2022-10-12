@@ -1,6 +1,6 @@
 import { recentStyles } from './recents.style';
 import { ScrollView, Text, View, Image, ImageBackground } from 'react-native';
-import { recentData } from '../../../data/default.data';
+
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 
@@ -12,9 +12,7 @@ export function Recents() {
   });
 
   const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
+   
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
