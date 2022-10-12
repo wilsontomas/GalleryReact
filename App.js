@@ -7,14 +7,13 @@ import { Home } from './components/home/home.components';
 import { Album } from './components/albums/album.component';
 import { ImageView } from './components/imageView/imageView.component';
 export default function App() {
-  
   return (
     <View style={[styles.container]}>
       <View style={styles.header}>
       <Header></Header>
       </View>
       <View style={styles.body}>
-    <ImageView></ImageView>
+   <Home></Home>
     
       </View>
     
