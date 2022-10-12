@@ -1,5 +1,5 @@
 import {placeStyles } from './places.style'
-import { Text, View,ScrollView } from 'react-native';
+import { Text, View,ScrollView,Image } from 'react-native';
 import { testData } from '../../../data/default.data';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
@@ -22,9 +22,33 @@ export function Places() {
         <Text  style={[placeStyles.title,{ fontFamily: 'LexendGiga-Black' }]}>Lugares visitados</Text>
       <ScrollView horizontal={true} style={placeStyles.itemScroll}>
         <View style={placeStyles.itemContainer}>
-        {testData.map((x)=><View key={x.index} style={placeStyles.items}>
-          
-          </View>)}
+       
+          <View  style={placeStyles.items}>
+        <Image style={placeStyles.images} source={require('../../../assets/inicio/LaAltagracia.jpg')} />
+        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Altagracia</Text>
+          </View>
+
+          <View  style={placeStyles.items}>
+        <Image style={placeStyles.images} source={require('../../../assets/inicio/LaRomana.jpg')} />
+        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
+          </View>
+
+          <View  style={placeStyles.items}>
+        <Image style={placeStyles.images} source={require('../../../assets/inicio/HatoMayor.jpg')} />
+        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
+          </View>
+
+          <View  style={placeStyles.items}>
+        <Image style={placeStyles.images} source={require('../../../assets/inicio/LaRomana.jpg')} />
+        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
+          </View>
+
+          <View  style={placeStyles.items}>
+        <Image style={placeStyles.images} source={require('../../../assets/inicio/HatoMayor.jpg')} />
+        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
+          </View>
+
+
         </View>
       
       </ScrollView>

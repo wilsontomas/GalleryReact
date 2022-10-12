@@ -17,14 +17,33 @@ export const placeStyles = StyleSheet.create({
     },
     items:{
       
-    
-      height:90,
+     
+      height:110,
       width:115,
-      backgroundColor:'#0d99ff',
+     borderColor:'black',
+     borderWidth:1,
       borderRadius:20,
-       margin:5
+       margin:5,
+       
+      alignItems:'center',
+    
+
       
          
+    },
+    images:{
+      width:100,
+      height:80,
+      borderRadius:20,
+      marginTop:5
+      
+    },
+    texto:{
+     height:25,
+     fontSize:10,
+   
+    
+
     },
     title:{
       paddingTop:40,
