@@ -3,6 +3,8 @@ import { View, Text, Image, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
+
+import Image1 from '../../assets/Recursos2/detalleAlbum/Component 9.svg'
 export function ImageView() {
  
 
@@ -30,7 +32,7 @@ export function ImageView() {
 
       <View style={imageViewStyles.photoContainer}>
      
-        <ImageBackground style={imageViewStyles.photo} source={require('../../assets/detalleAlbum/photo.jpg')}></ImageBackground>
+        <Image1 style={imageViewStyles.photo} />
       </View>
 
 

@@ -17,7 +17,8 @@ export const imageViewStyles = StyleSheet.create({
       width:'100%',
       height:'100%',
      
-      justifyContent:'center'
+      justifyContent:'center',
+    alignItems:'center'
 
     },
     textContainer:{
@@ -39,7 +40,7 @@ export const imageViewStyles = StyleSheet.create({
     },
     photo:{
         width:'100%',
-        height:'95%'
+        height:'100%'
     }
    
   

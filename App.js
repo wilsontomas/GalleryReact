@@ -14,8 +14,7 @@ export default function App() {
       <Header></Header>
       </View>
       <View style={styles.body}>
-   <Home></Home>
-    
+  <ImageView></ImageView>
       </View>
     
       <View style={styles.footer}>
