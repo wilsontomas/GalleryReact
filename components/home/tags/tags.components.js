@@ -3,6 +3,12 @@ import { Text, View, ScrollView,Image } from 'react-native';
 import { testData } from '../../../data/default.data';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
+
+import Image1 from '../../../assets/Recursos2/inicio/Nature.svg'
+import Image2 from '../../../assets/Recursos2/inicio/Tag faces.svg'
+import Image3 from '../../../assets/Recursos2/inicio/Fastfood.svg'
+import Image4 from '../../../assets/Recursos2/inicio/Pets.svg'
+
 export function Tags() {
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
@@ -23,36 +29,36 @@ export function Tags() {
         <View style={tagStyles.itemContainer}>
       
         <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
+      
+        <Image1  style={tagStyles.images}/>
+          </View>
+          <View  style={tagStyles.items}>
+      
+        <Image2  style={tagStyles.images}/>
+          </View>
+          <View  style={tagStyles.items}>
+       
+        <Image3 style={tagStyles.images}/>
+          </View>
+          <View  style={tagStyles.items}>
+       
+        <Image4  style={tagStyles.images}/>
+          </View>
+          <View  style={tagStyles.items}>
         
+        <Image1  style={tagStyles.images}/>
           </View>
           <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Tagfaces.jpg')} />
-         
+      
+        <Image2  style={tagStyles.images}/>
           </View>
           <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Food.jpg')} />
-         
+       
+        <Image3 style={tagStyles.images}/>
           </View>
           <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Pets.jpg')} />
-          
-          </View>
-          <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
-        
-          </View>
-          <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Food.jpg')} />
-         
-          </View>
-          <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Pets.jpg')} />
-          
-          </View>
-          <View  style={tagStyles.items}>
-        <Image style={tagStyles.images} source={require('../../../assets/inicio/Nature.jpg')} />
-        
+       
+        <Image4  style={tagStyles.images}/>
           </View>
         </View>
       

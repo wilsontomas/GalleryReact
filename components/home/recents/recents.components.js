@@ -4,6 +4,11 @@ import { ScrollView, Text, View, Image, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 
+import Recent1 from '../../../assets/Recursos2/inicio/recentAlbum1.svg'
+import Recent2 from '../../../assets/Recursos2/inicio/recentAlbum2.svg'
+import Recent3 from '../../../assets/Recursos2/inicio/recentAlbum3.svg'
+import Recent4 from '../../../assets/Recursos2/inicio/recentAlbum3.svg'
+
 export function Recents() {
 
 
@@ -27,29 +32,28 @@ export function Recents() {
         <View style={recentStyles.itemContainer}>
 
           <View style={recentStyles.items}>
-            <Image style={recentStyles.images} source={require('../../../assets/inicio/recentAlbum1.jpg')} />
-
+                <Recent1 style={recentStyles.images}  />
 
             <Text style={[recentStyles.texto, { fontFamily: 'LexendGiga-Black' }]}>Wilson</Text>
           </View>
           <View style={recentStyles.items}>
-            <Image style={recentStyles.images} source={require('../../../assets/inicio/recentAlbum2.jpg')} />
+          <Recent2 style={recentStyles.images}  />
             <Text style={[recentStyles.texto, { fontFamily: 'LexendGiga-Black' }]}>Eduardo</Text>
 
           </View>
         </View>
         <View style={recentStyles.items}>
-          <Image style={recentStyles.images} source={require('../../../assets/inicio/recentAlbum3.jpg')} />
+        <Recent3 style={recentStyles.images}  />
           <Text style={[recentStyles.texto, { fontFamily: 'LexendGiga-Black' }]}>Tomas</Text>
 
         </View>
         <View style={recentStyles.items}>
-          <Image style={recentStyles.images} source={require('../../../assets/inicio/recentAlbum4.jpg')} />
+        <Recent4 style={recentStyles.images}  />
           <Text style={[recentStyles.texto, { fontFamily: 'LexendGiga-Black' }]}>Alcantara</Text>
 
         </View>
         <View style={recentStyles.items}>
-          <Image style={recentStyles.images} source={require('../../../assets/inicio/recentAlbum1.jpg')} />
+        <Recent1 style={recentStyles.images}  />
           <Text style={[recentStyles.texto, { fontFamily: 'LexendGiga-Black' }]}>Hola</Text>
 
         </View>

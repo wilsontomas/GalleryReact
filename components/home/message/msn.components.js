@@ -2,6 +2,7 @@ import { msnStyles } from './msn.style';
 import { Text, View,Image } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
+import Imagen from '../../../assets/Recursos2/inicio/Welcome.svg'
 
 export function Msn() {
   const [fontsLoaded] = useFonts({
@@ -21,10 +22,8 @@ export function Msn() {
        
         <View style={msnStyles.itemContainer}>
         <View style={msnStyles.imageContainer}>
-              <Image 
-              source={require('../../../assets/inicio/Welcome.jpg')}
-               style={msnStyles.imageS}/>
-
+             
+            <Imagen  style={msnStyles.imageS} />
             
             </View>
             <View style={msnStyles.info}>

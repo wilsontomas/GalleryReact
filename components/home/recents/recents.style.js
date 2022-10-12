@@ -46,7 +46,7 @@ export const recentStyles = StyleSheet.create({
      zIndex:99,
      position:'absolute',
      fontSize:10,
-    marginVertical:'60%'
+    marginVertical:'50%'
 
     }
    
