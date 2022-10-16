@@ -13,7 +13,7 @@ export const albumItemStyles = StyleSheet.create({
    
     padding:5,
     borderWidth:1,
-    borderBottomColor:'lightblue'
+   
     
   },
   itemContainer: {

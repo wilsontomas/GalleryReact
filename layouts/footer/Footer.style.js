@@ -6,7 +6,9 @@ export const footerStyle = StyleSheet.create({
       flexDirection:'row',
     
       alignItems: 'center',
-      
+      backgroundColor:'white',
+      borderTopEndRadius:100,
+      borderTopStartRadius:100
     },
     options:{
       flexGrow:1,

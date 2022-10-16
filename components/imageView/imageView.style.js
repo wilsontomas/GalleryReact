@@ -6,7 +6,8 @@ export const imageViewStyles = StyleSheet.create({
     flexGrow:1,
      flexDirection:'row',
      height:100,
-      flexWrap:'wrap'
+      flexWrap:'wrap',
+     
 
       
     },
@@ -25,7 +26,7 @@ export const imageViewStyles = StyleSheet.create({
       flexGrow:1,
       width:'100%',
       flexDirection:'row',
-     
+      alignItems:'center'
     },
   
    

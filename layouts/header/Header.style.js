@@ -13,6 +13,6 @@ export const headerStyle = StyleSheet.create({
     },
     logo:{
       color:'blue',
-      fontSize:20
+      fontSize:15
     }
   });
