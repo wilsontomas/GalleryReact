@@ -5,14 +5,20 @@ import Category from '../../assets/Recursos2/navBar/Category.svg'
 import Settings from '../../assets/Recursos2/navBar/Settings.svg'
 import Vector1 from '../../assets/Recursos2/navBar/Vector-1.svg'
 import Vector2 from '../../assets/Recursos2/navBar/Vector-2.svg'
+import { useNavigation } from '@react-navigation/native';
 export function Footer() {
+  const navigation = useNavigation();
+  const metodo = ()=>{
+    onsole.log('metodo')
+  }
   return (
     <View style={footerStyle.container}>
 
 
       <View style={footerStyle.options}>
 
-        <Category style={footerStyle.images} />
+        <Category onPress={() => navigation.navigate('Album')}  style={footerStyle.images} />
+        
       </View>
       <View style={footerStyle.options}>
 
@@ -20,7 +26,7 @@ export function Footer() {
       </View>
       <View style={footerStyle.options}>
 
-        <Feather style={footerStyle.images} name="plus-circle" size={45} color="black" />
+        <Feather onPress={() => navigation.navigate('Home')} style={footerStyle.images} name="plus-circle" size={45} color="black" />
       </View>
 
       <View style={footerStyle.options}>
@@ -29,7 +35,7 @@ export function Footer() {
       </View>
 
       <View style={footerStyle.options}>
-        <Vector2 style={footerStyle.images} />
+        <Vector2 onPress={() => navigation.navigate('ImageView')} style={footerStyle.images} />
       </View>
 
     </View>
