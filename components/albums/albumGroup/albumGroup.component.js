@@ -1,10 +1,10 @@
 import { albumGroupStyles } from './albumGroup.style';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import { AlbumItem } from '../albumItem/albumItem.component';
 export function AlbumGroup() {
-  const cantidad=[1,2,3,4];
+  let cantidad=new Array(10).fill(0);
 
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
@@ -17,6 +17,9 @@ export function AlbumGroup() {
   if (!fontsLoaded) {
     return null;
   }
+  const renderItem = ({ item }) => (
+    <AlbumItem style={albumGroupStyles.item}></AlbumItem>
+  );
 
   return (
     <View style={[albumGroupStyles.container]} onLayout={onLayoutRootView}>
@@ -27,10 +30,12 @@ export function AlbumGroup() {
       </View>
 
       <View style={albumGroupStyles.scrollContainer}>
-       <ScrollView style={albumGroupStyles.Scroll}>
-       {cantidad.map((x)=> <AlbumItem key={x} style={albumGroupStyles.item}></AlbumItem>)}
-       
-       </ScrollView>
+      <FlatList
+        data={cantidad}
+        renderItem={renderItem}
+        
+      />
+      
       </View>
 
 

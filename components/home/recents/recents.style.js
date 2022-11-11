@@ -37,7 +37,7 @@ export const recentStyles = StyleSheet.create({
     images:{
       width:75,
       height:75,
-      opacity: 0.5,
+      opacity: 0.8,
       
       
     },

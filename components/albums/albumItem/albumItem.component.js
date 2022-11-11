@@ -2,7 +2,7 @@ import { View, Text, Image } from 'react-native';
 import { albumItemStyles } from './albumItem.style';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
-
+import { useNavigation } from '@react-navigation/native';
 import Cover from '../../../assets/Recursos2/listaAlbumes/coverAlbum1.svg'
 import Imagen1 from '../../../assets/Recursos2/listaAlbumes/previewPhoto1.svg'
 import Imagen2 from '../../../assets/Recursos2/listaAlbumes/previewPhoto2.svg'
@@ -10,13 +10,13 @@ import Imagen3 from '../../../assets/Recursos2/listaAlbumes/previewPhoto3.svg'
 import Imagen4 from '../../../assets/Recursos2/listaAlbumes/previewPhoto4.svg'
 export function AlbumItem() {
 
-
+    const navigation=useNavigation();
     const [fontsLoaded] = useFonts({
         'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
     });
 
     const onLayoutRootView = useCallback(async () => {
-
+   
     }, [fontsLoaded]);
 
     if (!fontsLoaded) {
@@ -39,22 +39,22 @@ export function AlbumItem() {
 
                 <View style={albumItemStyles.pictureSubContainer1}>
                     <View style={albumItemStyles.bigImgContainer}>
-                        <Cover style={albumItemStyles.bigImg} />
+                        <Cover style={albumItemStyles.bigImg} onPress={() => navigation.navigate('ImageView')} />
                     </View>
 
                 </View>
                 <View style={albumItemStyles.pictureSubContainer2}>
                     <View style={[albumItemStyles.smallImgContainer]}>
-                        <Imagen1 style={albumItemStyles.smallImg} />
+                        <Imagen1 style={albumItemStyles.smallImg} onPress={() => navigation.navigate('ImageView')} />
                     </View>
                     <View style={[albumItemStyles.smallImgContainer]}>
-                        <Imagen2 style={albumItemStyles.smallImg} />
+                        <Imagen2 style={albumItemStyles.smallImg} onPress={() => navigation.navigate('ImageView')} />
                     </View>
                     <View style={[albumItemStyles.smallImgContainer]}>
-                        <Imagen3 style={albumItemStyles.smallImg} />
+                        <Imagen3 style={albumItemStyles.smallImg} onPress={() => navigation.navigate('ImageView')} />
                     </View>
                     <View style={[albumItemStyles.smallImgContainer]}>
-                        <Imagen4 style={albumItemStyles.smallImg} />
+                        <Imagen4 style={albumItemStyles.smallImg} onPress={() => navigation.navigate('ImageView')} />
                     </View>
                 </View>
             </View>

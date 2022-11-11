@@ -7,12 +7,13 @@ import { useCallback } from 'react';
 import Image1 from '../../../assets/Recursos2/inicio/LaAltagracia.svg'
 import Image2 from '../../../assets/Recursos2/inicio/LaRomana.svg'
 import Image3 from '../../../assets/Recursos2/inicio/HatoMayor.svg'
+import { useNavigation } from '@react-navigation/native';
 
 export function Places() {
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
   });
-  
+  const navigation = useNavigation();
   const onLayoutRootView = useCallback(async () => {
   
   }, [fontsLoaded]);
@@ -28,27 +29,27 @@ export function Places() {
        
           <View  style={placeStyles.items}>
         
-        <Image1  style={placeStyles.images} />
+        <Image1  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
         <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Altagracia</Text>
           </View>
 
           <View  style={placeStyles.items}>
-          <Image2  style={placeStyles.images} />
+          <Image2  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
         <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
           </View>
 
           <View  style={placeStyles.items}>
-          <Image3  style={placeStyles.images} />
+          <Image3  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
         <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
           </View>
 
           <View  style={placeStyles.items}>
-          <Image2  style={placeStyles.images} />
+          <Image2  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
         <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
           </View>
 
           <View  style={placeStyles.items}>
-          <Image3  style={placeStyles.images} />
+          <Image3  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
         <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
           </View>
 
