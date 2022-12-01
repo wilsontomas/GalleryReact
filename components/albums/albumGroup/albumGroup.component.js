@@ -1,11 +1,13 @@
 import { albumGroupStyles } from './albumGroup.style';
 import { View, Text, FlatList } from 'react-native';
 import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { AlbumItem } from '../albumItem/albumItem.component';
+import { StoreContext } from '../../../services/store/StoreProvider';
 export function AlbumGroup() {
   let cantidad=new Array(10).fill(0);
-
+  const [store,dispatch] = useContext(StoreContext);
+  const {albumId,photoId}=store;
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
   });
@@ -20,12 +22,12 @@ export function AlbumGroup() {
   const renderItem = ({ item }) => (
     <AlbumItem style={albumGroupStyles.item}></AlbumItem>
   );
-
+  
   return (
     <View style={[albumGroupStyles.container]} onLayout={onLayoutRootView}>
       <View style={albumGroupStyles.textContainer}>
         <Text style={[albumGroupStyles.title, { fontFamily: 'LexendGiga-Black' }]}>Albumes</Text>
-        <Text style={[albumGroupStyles.subtitle, { fontFamily: 'LexendGiga-Black' }]}># albumes</Text>
+        <Text style={[albumGroupStyles.subtitle, { fontFamily: 'LexendGiga-Black' }]}># {albumId}/{photoId}</Text>
 
       </View>
 

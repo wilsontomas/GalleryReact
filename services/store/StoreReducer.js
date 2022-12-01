@@ -1,6 +1,6 @@
 const types ={
     album:'Album-action',
-    photo:'photo - action'
+    photo:'photo-action'
 }
 
 const initialStore = {
@@ -8,12 +8,15 @@ const initialStore = {
     photoId:1,
 }
 const StoreReducer = (state,action)=>{
-    switch(action.type){
+   
+    switch(action.types){
         case types.album:
+            
             return {
                 ...state,
                 albumId: action.payload
             }
+           
         case types.photo:
             return {
                 ...state,
@@ -22,6 +25,7 @@ const StoreReducer = (state,action)=>{
         default:
             return state
     }
+    
 }
 
 export {initialStore, types};
