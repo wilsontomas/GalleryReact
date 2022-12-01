@@ -1,13 +1,39 @@
 import { albumGroupStyles } from './albumGroup.style';
 import { View, Text, FlatList } from 'react-native';
 import { useFonts } from 'expo-font';
-import { useCallback, useContext } from 'react';
+import { useCallback, useContext,useEffect, useState } from 'react';
 import { AlbumItem } from '../albumItem/albumItem.component';
 import { StoreContext } from '../../../services/store/StoreProvider';
+import { loadAlbumById } from '../../services/albumService';
 export function AlbumGroup() {
   let cantidad=new Array(10).fill(0);
   const [store,dispatch] = useContext(StoreContext);
   const {albumId,photoId}=store;
+  const [images,setImages] = useState([]);
+  const [imagegroups,setImagesgroups] = useState([]);
+  useEffect(()=>{
+    loadAlbumById(albumId).then((response) => response.json()).then(data=>{
+     
+      setImages(data)
+      let end =5;
+      let initial=0;
+      let arreglo=[];
+      for(var i=0;i<3;i++){
+        let grupo ={
+          albumId:albumId,
+          data:images.slice(initial,end)
+        }
+
+        arreglo.push(grupo);
+        initial+=5;
+        end+=5;
+      }
+      setImagesgroups(arreglo)
+     
+  });
+   
+  },[])
+  console.log(imagegroups);
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
   });
@@ -20,7 +46,7 @@ export function AlbumGroup() {
     return null;
   }
   const renderItem = ({ item }) => (
-    <AlbumItem style={albumGroupStyles.item}></AlbumItem>
+    <AlbumItem style={albumGroupStyles.item} images={images}></AlbumItem>
   );
   
   return (
@@ -33,7 +59,7 @@ export function AlbumGroup() {
 
       <View style={albumGroupStyles.scrollContainer}>
       <FlatList
-        data={cantidad}
+        data={imagegroups}
         renderItem={renderItem}
         
       />

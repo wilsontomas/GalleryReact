@@ -8,4 +8,8 @@ export const loadPlaces =[
     {id:6, text:'Ejemplo 6', url:'https://via.placeholder.com/150/afc5c2.png'},
 
 ]
+const url = 'https://jsonplaceholder.typicode.com/albums/1/photos'
+export const loadAlbumById = (id)=>{
+    return fetch("https://jsonplaceholder.typicode.com/albums/"+id+"/photos");
+}
 
