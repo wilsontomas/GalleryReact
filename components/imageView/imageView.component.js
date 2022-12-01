@@ -36,10 +36,7 @@ export function ImageView() {
     return (
       <View style={[imageViewStyles.container]} onLayout={onLayoutRootView}>
         <View style={imageViewStyles.photoContainer}>
-          
-          <TouchableOpacity>
               <Image source={{uri:photo?.thumbnailUrl+".png"}} style={imageViewStyles.photo}  />
-          </TouchableOpacity>
         </View>
       </View>
     );
