@@ -2,12 +2,16 @@ import {placeStyles } from './places.style'
 import { Text, View,ScrollView,Image } from 'react-native';
 import { testData } from '../../../data/default.data';
 import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 
 import Image1 from '../../../assets/Recursos2/inicio/LaAltagracia.svg'
 import Image2 from '../../../assets/Recursos2/inicio/LaRomana.svg'
 import Image3 from '../../../assets/Recursos2/inicio/HatoMayor.svg'
 import { useNavigation } from '@react-navigation/native';
+import { StoreContext } from '../../../services/store/StoreProvider';
+import { loadPlaces } from '../../services/albumService';
+import { types } from '../../../services/store/StoreReducer';
+import { TouchableOpacity } from 'react-native';
 
 export function Places() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +21,15 @@ export function Places() {
   const onLayoutRootView = useCallback(async () => {
   
   }, [fontsLoaded]);
+  const [store,dispatch] = useContext(StoreContext);
 
+ const albumNavigate =(id)=>{
+    dispatch({
+      types: types.album,
+      payload:id
+    })
+    navigation.navigate('Album')
+  }
   if (!fontsLoaded) {
     return null;
   }
@@ -27,31 +39,20 @@ export function Places() {
       <ScrollView horizontal={true} style={placeStyles.itemScroll}>
         <View style={placeStyles.itemContainer}>
        
-          <View  style={placeStyles.items}>
+        {loadPlaces.map(item=>{
+          return (
+            <View key={item.id} style={placeStyles.items} >
+               <TouchableOpacity onPress={() =>  albumNavigate(item.id)}>
+               <Image source={{uri:item.url}} style={placeStyles.images}  />
+           
+               </TouchableOpacity>
+            <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>{item.text}</Text>
+              </View>
+          )
+        })}
         
-        <Image1  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
-        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Altagracia</Text>
-          </View>
 
-          <View  style={placeStyles.items}>
-          <Image2  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
-        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
-          </View>
-
-          <View  style={placeStyles.items}>
-          <Image3  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
-        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
-          </View>
-
-          <View  style={placeStyles.items}>
-          <Image2  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
-        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>La Romana</Text>
-          </View>
-
-          <View  style={placeStyles.items}>
-          <Image3  style={placeStyles.images}  onPress={() => navigation.navigate('Album')} />
-        <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Hato Mayor</Text>
-          </View>
+      
 
 
 
