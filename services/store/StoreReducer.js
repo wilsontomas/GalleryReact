@@ -18,6 +18,7 @@ const StoreReducer = (state,action)=>{
             }
            
         case types.photo:
+           
             return {
                 ...state,
                 photoId: action.payload

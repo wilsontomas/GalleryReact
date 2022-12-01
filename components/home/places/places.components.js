@@ -28,7 +28,7 @@ export function Places() {
       types: types.album,
       payload:id
     })
-    console.log(id)
+    
     navigation.navigate('Album')
   }
   if (!fontsLoaded) {

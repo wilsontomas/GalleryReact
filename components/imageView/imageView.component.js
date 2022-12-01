@@ -1,11 +1,14 @@
 import { imageViewStyles } from './imageView.style';
-import { View, Text, Image, ImageBackground } from 'react-native';
+import { View, Image } from 'react-native';
 import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 
-import Image1 from '../../assets/Recursos2/detalleAlbum/Component 9.svg'
 import { Loader } from '../services/loader/loader.component';
 import useIsReady from '../services/isReady';
+import { StoreContext } from '../../services/store/StoreProvider';
+import { loadPhotoById } from '../services/albumService';
+import { TouchableOpacity } from 'react-native';
+import { Text } from 'react-native';
 export function ImageView() {
  
   const [fontsLoaded] = useFonts({
@@ -16,7 +19,15 @@ export function ImageView() {
   const onLayoutRootView = useCallback(async () => {
 
   }, [fontsLoaded]);
-
+  const [store,dispatch] = useContext(StoreContext);
+  const {albumId,photoId}=store;
+  const [photo,setPhoto] = useState({});
+  useEffect(()=>{
+    loadPhotoById(photoId).then((response) => response.json()).then(data=>{
+      setPhoto(data);
+      
+    });
+  },[]);
   if (!fontsLoaded) {
     return null;
   }
@@ -25,7 +36,10 @@ export function ImageView() {
     return (
       <View style={[imageViewStyles.container]} onLayout={onLayoutRootView}>
         <View style={imageViewStyles.photoContainer}>
-          <Image1 style={imageViewStyles.photo} />
+          
+          <TouchableOpacity>
+              <Image source={{uri:photo?.thumbnailUrl+".png"}} style={imageViewStyles.photo}  />
+          </TouchableOpacity>
         </View>
       </View>
     );

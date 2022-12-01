@@ -33,7 +33,7 @@ export function AlbumGroup() {
   });
    
   },[])
-  console.log(imagegroups);
+  
   const [fontsLoaded] = useFonts({
     'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
   });

@@ -1,10 +1,12 @@
 import { View, Text, Image } from 'react-native';
 import { albumItemStyles } from './albumItem.style';
 import { useFonts } from 'expo-font';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import { TouchableOpacity } from 'react-native';
+import { StoreContext } from '../../../services/store/StoreProvider';
+import { types } from '../../../services/store/StoreReducer';
 
 export function AlbumItem({images}) {
    // let imageLst = getImageData();
@@ -24,7 +26,15 @@ export function AlbumItem({images}) {
     const onLayoutRootView = useCallback(async () => {
    
     }, [fontsLoaded]);
-
+    const [store,dispatch] = useContext(StoreContext);
+    const {albumId,photoId}=store;
+    const showPhoto =(id)=>{
+        dispatch({
+            types: types.photo,
+            payload:id
+          })
+        navigation.navigate('ImageView')
+    }
     if (!fontsLoaded) {
         return null;
     }
@@ -45,7 +55,7 @@ export function AlbumItem({images}) {
 
                 <View style={albumItemStyles.pictureSubContainer1}>
                     <View style={albumItemStyles.bigImgContainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ImageView')}>
+                    <TouchableOpacity onPress={() => showPhoto(First.id)}>
                           <Image source={{uri:First?.thumbnailUrl+".png"}} style={albumItemStyles.bigImg}  />
                     </TouchableOpacity>
                     </View>
@@ -54,7 +64,7 @@ export function AlbumItem({images}) {
                 <View style={albumItemStyles.pictureSubContainer2}>
                     {imageLst.slice(1).map(ImageObject=>
                     <View key={ImageObject.id} style={[albumItemStyles.smallImgContainer]}>
-                        <TouchableOpacity onPress={() => navigation.navigate('ImageView')}>
+                        <TouchableOpacity onPress={() => showPhoto(ImageObject.id)}>
                           <Image source={{uri:ImageObject.thumbnailUrl+".png"}} style={albumItemStyles.smallImg}  />
                         </TouchableOpacity>
                     </View>)}
