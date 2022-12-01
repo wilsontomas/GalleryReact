@@ -1,18 +1,21 @@
 import { View, Text, Image } from 'react-native';
 import { albumItemStyles } from './albumItem.style';
 import { useFonts } from 'expo-font';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import Cover from '../../../assets/Recursos2/listaAlbumes/coverAlbum1.svg'
-import Imagen1 from '../../../assets/Recursos2/listaAlbumes/previewPhoto1.svg'
-import Imagen2 from '../../../assets/Recursos2/listaAlbumes/previewPhoto2.svg'
-import Imagen3 from '../../../assets/Recursos2/listaAlbumes/previewPhoto3.svg'
-import Imagen4 from '../../../assets/Recursos2/listaAlbumes/previewPhoto4.svg'
-import { getImageData } from '../../../data/default.data';
 
-export function AlbumItem() {
-    let imageLst = getImageData();
-    let First = imageLst[0];
+import { TouchableOpacity } from 'react-native';
+
+export function AlbumItem({images}) {
+   // let imageLst = getImageData();
+   const [imageLst,setImagenes] = useState([]);
+   const [First,setFirst] = useState({});
+
+   useEffect(()=>{
+    setImagenes(images.data);
+    setFirst(images.data[0])
+   },[])
+   
     const navigation=useNavigation();
     const [fontsLoaded] = useFonts({
         'LexendGiga-Black': require('../../../assets/fonts/LexendGiga-Black.ttf'),
@@ -42,17 +45,21 @@ export function AlbumItem() {
 
                 <View style={albumItemStyles.pictureSubContainer1}>
                     <View style={albumItemStyles.bigImgContainer}>
-                       
-                        <First.image style={albumItemStyles.bigImg} onPress={() => navigation.navigate('ImageView')} />
+                    <TouchableOpacity onPress={() => navigation.navigate('ImageView')}>
+                          <Image source={{uri:First?.thumbnailUrl+".png"}} style={albumItemStyles.bigImg}  />
+                    </TouchableOpacity>
                     </View>
 
                 </View>
                 <View style={albumItemStyles.pictureSubContainer2}>
                     {imageLst.slice(1).map(ImageObject=>
-                    <View key={ImageObject.index} style={[albumItemStyles.smallImgContainer]}>
-                        <ImageObject.image style={albumItemStyles.smallImg} onPress={() => navigation.navigate('ImageView')} />
+                    <View key={ImageObject.id} style={[albumItemStyles.smallImgContainer]}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ImageView')}>
+                          <Image source={{uri:ImageObject.thumbnailUrl+".png"}} style={albumItemStyles.smallImg}  />
+                        </TouchableOpacity>
                     </View>)}
-                    
+
+                   
 
                 </View>
             </View>

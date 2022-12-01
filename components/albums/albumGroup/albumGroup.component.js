@@ -21,7 +21,7 @@ export function AlbumGroup() {
       for(var i=0;i<3;i++){
         let grupo ={
           albumId:albumId,
-          data:images.slice(initial,end)
+          data:data.slice(initial,end)
         }
 
         arreglo.push(grupo);
@@ -46,7 +46,7 @@ export function AlbumGroup() {
     return null;
   }
   const renderItem = ({ item }) => (
-    <AlbumItem style={albumGroupStyles.item} images={images}></AlbumItem>
+    <AlbumItem style={albumGroupStyles.item} images={item}></AlbumItem>
   );
   
   return (

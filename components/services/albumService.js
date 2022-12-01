@@ -13,3 +13,6 @@ export const loadAlbumById = (id)=>{
     return fetch("https://jsonplaceholder.typicode.com/albums/"+id+"/photos");
 }
 
+export const loadPhotoById=(id)=>{
+    return fetch("https://jsonplaceholder.typicode.com/photos/"+id);
+}
