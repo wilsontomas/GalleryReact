@@ -11,6 +11,7 @@ export function AlbumGroup() {
   const {albumId,photoId}=store;
   const [images,setImages] = useState([]);
   const [imagegroups,setImagesgroups] = useState([]);
+  const [albumSize,setAlbumSize] = useState(7);
   useEffect(()=>{
     loadAlbumById(albumId).then((response) => response.json()).then(data=>{
      
@@ -18,7 +19,7 @@ export function AlbumGroup() {
       let end =5;
       let initial=0;
       let arreglo=[];
-      for(var i=0;i<3;i++){
+      for(var i=0;i<albumSize;i++){
         let grupo ={
           albumId:albumId,
           data:data.slice(initial,end)
@@ -53,7 +54,7 @@ export function AlbumGroup() {
     <View style={[albumGroupStyles.container]} onLayout={onLayoutRootView}>
       <View style={albumGroupStyles.textContainer}>
         <Text style={[albumGroupStyles.title, { fontFamily: 'LexendGiga-Black' }]}>Albumes</Text>
-        <Text style={[albumGroupStyles.subtitle, { fontFamily: 'LexendGiga-Black' }]}># {albumId}/{photoId}</Text>
+        <Text style={[albumGroupStyles.subtitle, { fontFamily: 'LexendGiga-Black' }]}># {albumId}/{albumSize*5}</Text>
 
       </View>
 

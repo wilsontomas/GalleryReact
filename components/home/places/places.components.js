@@ -4,14 +4,13 @@ import { testData } from '../../../data/default.data';
 import { useFonts } from 'expo-font';
 import { useCallback, useContext } from 'react';
 
-import Image1 from '../../../assets/Recursos2/inicio/LaAltagracia.svg'
-import Image2 from '../../../assets/Recursos2/inicio/LaRomana.svg'
-import Image3 from '../../../assets/Recursos2/inicio/HatoMayor.svg'
 import { useNavigation } from '@react-navigation/native';
 import { StoreContext } from '../../../services/store/StoreProvider';
-import { loadPlaces } from '../../services/albumService';
+import { loadAllAlbumType, loadPlaces } from '../../services/albumService';
 import { types } from '../../../services/store/StoreReducer';
 import { TouchableOpacity } from 'react-native';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export function Places() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +21,26 @@ export function Places() {
   
   }, [fontsLoaded]);
   const [store,dispatch] = useContext(StoreContext);
+  const [albums,setAlbums] = useState([]);
+  useEffect(()=>{
+    loadAllAlbumType()
+    .then(response => response.json())
+    .then(json => {
+      let newData =getArrayData(json);
+      setAlbums(newData);
+    })
+  },[])
 
+  const getArrayData=(data)=>{
+    let id =1;
+    let newData =[];
+    for(let i=0;i<10;i++){
+      let tempData = data.filter(res=>res.albumId==id)[0];
+      newData.push(tempData);
+      id++;
+    }
+    return newData;
+  }
  const albumNavigate =(id)=>{
     dispatch({
       types: types.album,
@@ -40,17 +58,19 @@ export function Places() {
       <ScrollView horizontal={true} style={placeStyles.itemScroll}>
         <View style={placeStyles.itemContainer}>
        
-        {loadPlaces.map(item=>{
+        {albums.map(item=>{
           return (
             <View key={item.id} style={placeStyles.items} >
-               <TouchableOpacity onPress={() =>  albumNavigate(item.id)}>
-               <Image source={{uri:item.url}} style={placeStyles.images}  />
+               <TouchableOpacity onPress={() =>  albumNavigate(item.albumId)}>
+               <Image source={{uri:item.thumbnailUrl}} style={placeStyles.images}  />
            
                </TouchableOpacity>
-            <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>{item.text}</Text>
+            <Text style={[placeStyles.texto,{ fontFamily: 'LexendGiga-Black' }]}>Ejemplo {item.albumId}</Text>
               </View>
           )
         })}
+
+        
         
 
       
